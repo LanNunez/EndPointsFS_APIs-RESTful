@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do CEP{% endblock %}
+
+{% block content %}
+<h1>Detalhes do CEP</h1>
+
+<ul>
+    <li><strong>CEP:</strong> {{ cep.cep }}</li>
+    <li><strong>Logradouro:</strong> {{ cep.logradouro }}</li>
+    <li><strong>Bairro:</strong> {{ cep.bairro }}</li>
+    <li><strong>Cidade:</strong> {{ cep.localidade }}</li>
+    <li><strong>UF:</strong> {{ cep.uf }}</li>
+</ul>
+
+<a href="{% url 'viacep:list' %}">Voltar</a>
+<a href="{% url 'viacep:delete' cep.pk %}">Excluir</a>
+{% endblock %}
